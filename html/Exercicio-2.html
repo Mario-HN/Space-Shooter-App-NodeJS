@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Computação</title>
+</head>
+    <h1>Formulário de Contato</h1>
+<body>
+    <p>Por favor, preencha o formulário abaixo e clique no botão Enviar Mensagem. Agradecemos por <br /> 
+        seu contato.</p>
+    <fieldset>
+        <legend>Dados Básicos</legend>
+        Nome: <input type="text" value="" name="Nome"><br />
+        <label for="email">E-mail: </label>
+        <input type="text" value="" name="E-mail" required placeholder="seunome@dominio.com.br"><br />
+        Website: <input type="text" value="https://" name="Website"><br />
+    </fieldset> 
+    <fieldset>
+        <legend>Seu Curso no Instituto da Computação</legend>
+        <input type="radio" name="curso" value="cc">Ciência da Computação"><br>
+        <input type="radio" name="curso" value="es">Engenharia de Software<br>
+        <input type="radio" name="curso" value="ec">Engenharia da Computação<br>
+    </fieldset>
+    <fieldset>
+        <legend>Assinale as linguagens já usadas por você:</legend>
+        Java<input type="checkbox" name="linguagem" value="java">
+        C<input type="checkbox" name="linguagem" value="C">
+        Perl<input type="checkbox" name="linguagem" value="Perl">
+        Python<input type="checkbox" name="linguagem" value="Python">
+        Javascript<input type="checkbox" name="linguagem" value="Javascript">
+    </fieldset>
+    <fieldset>
+        <legend>Dados Complementares:</legend>
+        Cor favorita:<input type="color" name="cor" value=""><br>
+        Data de Nascimento:<input type="date" name="data" value=""><br>
+        Ano de entrada em seu curso do Icomp: <input type="number" name="ano" value="2022" min="1950" max="2022"><br>
+        Nota para este site: <input type="range" name="nota" >
+    </fieldset>
+    <fieldset>
+        <legend>Área de Atuação:</legend>
+        <select name="area" id="area">
+            <option value="1">Banco de Dados</option>
+            <option value="2">Educação a Distância</option>
+            <option value="3">Engenharia de Software</option>
+            <option value="4">Otimização</option>
+            <option value="5">Programação para a Web</option>
+            <option value="6">Recuperação de Informação</option>
+            <option value="7">Redes de Computadores</option>
+        </select>
+    </fieldset>
+    <Fieldset>
+        <legend>Submeta seu currículo vitae:</legend>
+        <input type="file" name="curriculo">
+    </Fieldset>
+    <fieldset>
+        <legend>Digite sua mensagem:</legend>
+        <textarea name="mensagem" cols="30" rows="4">Este é o valor padrão!
+        </textarea>
+    </fieldset>
+    <button id="2">Resetar Dados</button>
+    <button id="1">Enviar Mensagem</button>
+    
+</body>
+</html>
