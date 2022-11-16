@@ -1,0 +1,27 @@
+body{
+    margin: 30px 60px 30px 60px;
+    padding: 400px 900px 100px 400px;
+    background-color: rgba(79, 21, 173, 0.4);
+    background-image: url("img.jpg");
+    background-size: 90% 145%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: large;
+}
+    
+
+.bloco{
+    text-align: center ;
+    background-color: rgba(67, 21, 173, 0.7);  
+    border-style: solid;
+    border-width: 10px;
+    box-shadow: 0px 0px 10px 10px rgb(17, 2, 85), inset 0px 0px 5px 5px rgb(17, 2, 85);
+    padding: 3px 20px 12px 20px;
+    border-color: rgb(67, 8, 177);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius:  25px;
+    border-bottom-right-radius: 25px;
+}
+
