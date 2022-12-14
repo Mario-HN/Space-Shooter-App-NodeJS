@@ -1,0 +1,7 @@
+1. O código está sem a estrutura do <body>
+2. O comentário em HTML está feito de forma errada. O correto é feito utilizando <-- conteudo --> 
+3. Na linha 18, <strong> está aberto. No entanto esta tag precisa ser fechada no conjunto de caracteres que será usada. Ex: <strong> Olá </strong>
+4. Na linha 24 um <style> é aberto para embarcar um CSS, no entanto ali é adicionada uma funcao javascript, o que é totalmente errado, seria necesário abrir um <script> para isso e então
+escrever o código JS.
+5. Na linha 29, o return that.nome não funciona, para isso, o correto é 'return this.nome'
+6. Na linha 10 o #para era para ser o nome do container CSS e o background-color um elemento dentro do container. O correto seria trocá-los de posição.

@@ -1,0 +1,11 @@
+Hoisting é quando uma função é executada antes de ser declarada. Em alguns casos o js é capaz de perceber este 'erro' e 
+compreender a mudança de ordens, no entanto, as vezes isso pode ocasionar erros. 
+
+
+(function(){
+    teste(x)
+    function teste(x){
+        var a = 5;
+        return a*x;
+    }
+})
