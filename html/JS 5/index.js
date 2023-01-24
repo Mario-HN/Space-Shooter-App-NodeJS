@@ -15,8 +15,3 @@ document.getElementById("botao").addEventListener("click", (e) => {
     Area(radius);
     Circunferencia(radius);
 });
-
-
-
-// document.getElementById("botao").addEventListener("click", Area(radius));
-// document.getElementById("botao").addEventListener("click", Circunferencia(radius));
