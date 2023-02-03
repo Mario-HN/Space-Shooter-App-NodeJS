@@ -5,14 +5,16 @@
   "main": "myapp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon -r esm myapp.js"
+    "start": "npx nodemon -r esm index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "esm": "^3.2.25",
-    "is-odd": "^3.0.1"
+    "express-handlebars": "^6.0.7",
+    "is-odd": "^3.0.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
