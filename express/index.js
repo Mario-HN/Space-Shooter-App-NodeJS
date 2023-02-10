@@ -4,9 +4,14 @@ import { engine } from "express-handlebars";
 
 const morgan = require("morgan"); 
 const app = express()
-const PORT = 3000;
+const PORT = 4000;
 
-app.engine('handlebars', engine());
+app.engine('handlebars', engine({
+    helpers: require(`${__dirname}/src/views/helpers/helpers`),
+    layoutsDir: `${__dirname}/src/views/layouts`,
+    defaultLayout: 'main',
+}));
+
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/src/views`);
 
