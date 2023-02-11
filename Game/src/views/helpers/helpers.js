@@ -1,17 +1,7 @@
-const toUpper = (str) => str.toUpperCase();
-const toLower = (str) => str.toLowerCase();
-
-const hasError = (errors, path) => {
-    if (errors){
-        for( let i=0; i<errors.length; i++){
-            if (errors[i].path === path) return errors[i];
-        }
-    }
+export function toUpper(str) {
+    return str.toUpperCase();
 }
-return "";
 
-const isChecked = (curso, areaId) => {
-    if(curso && curso.areaId==areaId) return  "Checked";}
-return "";
-
-module.exports = {toUpper, toLower, isChecked}
+export function toLower(str) {
+    return str.toLowerCase();
+}

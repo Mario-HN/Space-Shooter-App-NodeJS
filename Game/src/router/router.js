@@ -1,21 +1,19 @@
-// Controlador Curso
+import express from "express";
+import mainController from "../controllers/main";
+const router = express.Router();
 
-const { router } = require("express");
+//Main controller
+router.get("/", mainController.index);
+router.get("/about", mainController.about);
+router.get("/profs", mainController.profs);
+router.get("/ui", mainController.ui);
 
-router.get("/curso", cursoController.index);
-router.get("/curso/create", cursoController.create);
-router.post("/curso/create", cursoController.create);
-router.get("/curso/:id", cursoController.read);
-router.get("/curso/update/:id", cursoController.update);
-router.post("/curso/update/:id", cursoController.update);
-router.get("/curso/remove/:id", cursoController.read);
 
-// Controlador Area
-
-router.get("/Area", areaController.index);
-
-module.exports = router;
+//User controller
 
 
 
+// ? controller
 
+
+export default router;
