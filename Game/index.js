@@ -4,8 +4,8 @@ import { engine, ExpressHandlebars } from "express-handlebars";
 import sass from "node-sass-middleware";
 
 const morgan = require("morgan"); 
-const app = express()
-const PORT = 3000;
+const app = express();
+const PORT = 3333;
 
 app.engine('handlebars', engine({
     helpers: require(`${__dirname}/src/views/helpers/helpers`),

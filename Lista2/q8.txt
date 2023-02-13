@@ -1,0 +1,18 @@
+8) Explique em poucas palavras o propósito do padrão de desenvolvimento MVC (model,
+view, controller), adotado durante o desenvolvimento do trabalho final da disciplina. Explique
+também a função de cada componente do padrão MVC: model, view, controller.
+
+
+O padrão MVC é um padrão de arquitetura de software que separa a aplicação em três componentes 
+distintos: model, view e controller.
+
+Model: representa a lógica de negócios da aplicação, incluindo dados e regras de negócio.
+
+View: responsável pela exibição dos dados e interação com o usuário.
+
+Controller: controla a ligação entre o model e a view, respondendo às ações do usuário e 
+atualizando o model e a view como necessário.
+
+O objetivo do MVC é separar a aplicação em componentes claramente definidos, tornando o desenvolvimento 
+mais organizado e fácil de manter. Além disso, a separação dos componentes permite que diferentes equipes 
+trabalhem em diferentes partes da aplicação ao mesmo tempo sem interferir umas nas outras.

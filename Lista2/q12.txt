@@ -1,0 +1,25 @@
+12)Por que dizemos que o HTTP é um protocolo que não mantém estado, isto é não
+mantem uma conexão? De que forma as sessões e os cookies são usados para lidar com
+essa limitação do HTTP?
+
+HTTP (HyperText Transfer Protocol) é considerado um protocolo sem estado porque ele não mantém informações 
+sobre o estado de uma conexão entre duas requisições. Isso significa que cada requisição HTTP é independente 
+e não tem informações sobre requisições anteriores ou futuras.
+
+Por exemplo, se um usuário envia uma requisição para o servidor para acessar uma página, o servidor enviará 
+uma resposta com o conteúdo da página, mas não manterá nenhuma informação sobre esse usuário ou sua sessão ativa 
+para uso em requisições futuras.
+
+Para lidar com essa limitação do HTTP, sessões e cookies são usados para armazenar informações sobre o estado 
+de uma conexão entre duas ou mais requisições.
+
+As sessões são geralmente implementadas no lado do servidor e armazenam informações sobre o usuário e sua 
+sessão, como itens em um carrinho de compras ou informações de login. Quando o usuário envia uma requisição, 
+o servidor pode usar a informação da sessão para personalizar a resposta.
+
+Os cookies são pequenos arquivos de texto armazenados no lado do cliente que podem ser usados para armazenar 
+informações sobre o usuário e sua sessão. Quando o usuário envia uma requisição, o cookie é enviado junto com 
+a requisição, permitindo que o servidor acesse e use a informação armazenada.
+
+Em resumo, sessões e cookies são usados para lidar com a limitação do HTTP de ser um protocolo sem estado, 
+permitindo que o estado de uma conexão seja mantido e informações importantes sejam armazenadas entre requisições.

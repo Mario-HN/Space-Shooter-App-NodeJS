@@ -1,0 +1,9 @@
+7) O que são Middlewares e como são usados no framework Express? Desenvolva um
+middleware capaz de imprimir no console (usando a função console.log()) qual o método
+HTTP (Get, Post, Patch, etc) usando em uma requisição ao sistema.
+
+
+middleware é o software que serve como ponte de comunicação entre o sistema 
+operacional e as funções de um aplicativo. Servidores de aplicativos, softwares 
+de mensagem, bancos de dados e monitores de processamento de transação são alguns 
+exemplos de middlewares.

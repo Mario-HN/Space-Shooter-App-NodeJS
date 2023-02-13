@@ -1,0 +1,16 @@
+4) Quais são as diferenças entre frameworks opinativos e não opinativos? Em qual dessas
+classes o framework Express melhor se encaixa?
+
+Os frameworks opinativos são aqueles com "opiniões" sobre o "caminho certo" para lidar 
+com qualquer tarefa específica. No entanto, são menos flexíveis na resolução de problemas 
+fora de seu domínio principal e tendem a oferecer menos opções para quais componentes e 
+abordagens podem usar nesses casos.
+Frameworks não opinativos, por outro lado, têm muito menos restrições sobre a melhor 
+maneira de utilizar componentes para atingir um objetivo, ou mesmo quais componentes 
+devem ser usados. Eles tornam mais fácil para os desenvolvedores usar as ferramentas 
+mais adequadas para completar uma tarefa específica, embora você precise encontrar 
+esses componentes por si próprio.
+Express é um framework não opinativo. Você pode inserir qualquer middleware que você 
+goste no manuseio das solicitações em quase qualquer ordem que desejar. Pode estruturar 
+o aplicativo em um arquivo ou em vários, usar qualquer estrutura de pastas dentro do 
+diretório principal, etc.
