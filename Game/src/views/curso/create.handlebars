@@ -1,0 +1,44 @@
+<h1>Formulário de Criação de Curso</h1>
+<form action="/curso/create" method="post">
+    <div class="container">
+        <div class="col-5">
+            <div class="form-group">
+                <label for="sigla" class="form-label mt-4">Sigla do Curso</label>
+                <input type="text" class="form-control" id="sigla" aria-describedby="siglaHelp" placeholder="IE07" />
+                <small id="siglaHelp" class="form-text text-muted">Sigla do curso da universidade.</small>
+            </div>
+            <div class="form-group">
+                <label for="nome" class="form-label mt-4">Nome do Curso</label>
+                <input type="text" class="form-control" id="nome" aria-describedby="nomeHelp"
+                    placeholder="Ciência da Computação" />
+                <small id="siglaHelp" class="form-text text-muted">Curso da universidade.</small>
+            </div>
+            <div class="form-group">
+                <label for="descricao" class="form-label mt-4">Descrição do Curso</label>
+                <textarea class="form-control" id="descricao" rows="3"></textarea>
+            </div>
+            <fieldset class="form-group">
+                <legend class="mt-4">Área de Estudo</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="areaId" id="areaId1" value="1" checked="">
+                    <label class="form-check-label" for="optionsRadios1">
+                        Ciências Exatas
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="areaId" id="areaId2" value="2">
+                    <label class="form-check-label" for="optionsRadios2">
+                        Ciências Humanas
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="areaId" id="AreaId3" value="3">
+                    <label class="form-check-label" for="optionsRadios3">
+                        Ciências Biológicas
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Adicionar Curso</button>
+            </fieldset>
+        </div>
+    </div>
+</form>

@@ -1,5 +1,6 @@
 import { Area } from "../models/index";
 import { Op } from "sequelize";
+const models = require("../models");
 
 const index = async (req, res) => {
     const areas = await Area.findAll();

@@ -1,11 +1,11 @@
 import express from "express"
 import router from "./src/router/router";
-import { engine } from "express-handlebars";
+import { engine, ExpressHandlebars } from "express-handlebars";
 import sass from "node-sass-middleware";
 
 const morgan = require("morgan"); 
 const app = express()
-const PORT = 4444;
+const PORT = 3000;
 
 app.engine('handlebars', engine({
     helpers: require(`${__dirname}/src/views/helpers/helpers`),
@@ -34,7 +34,7 @@ app.use("/js", [
 ]);
 
 
-
+app.use(express.urlencoded({extended: false}));
 app.use(morgan("combined"));
 app.use(router);
 
