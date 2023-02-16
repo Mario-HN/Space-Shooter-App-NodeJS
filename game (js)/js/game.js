@@ -7,27 +7,84 @@
 
   let space, ship, placar;
   let enemies = [];
+  let stopped = true;
+  let elapsedTime = 0;
+  let startTime = null;
+  let isPaused = false;
+  let score = 0;
+  let interval = 0;
+  
 
   function init() {
     space = new Space();
     ship = new Ship();
-    const interval = window.setInterval(run, 1000 / FPS);
-   
-    /*
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowUp"){
-        interval = window.setInterval(run, 1000 / FPS);
-        function pause(){
-          if (e.key === "ArrowDown") interval = window.setInterval(stop);
-          pause();
+    resetCount();
+    window.clearInterval(interval);
+
+    document.addEventListener('keydown', e => {
+      if(e.code === 'Space'){
+        if(document.getElementById('score').textContent != '0'){location.reload();}
+        startCount();
+        interval = window.setInterval(run, 1000/FPS);
+          
+        document.addEventListener('keydown', e => {
+          if (e.code === 'KeyP') {
+            stopped = !stopped;
+              switch (stopped) {
+                case true:
+                  resumeCount();
+                  interval = window.setInterval(run, 1000/FPS);
+                  console.log('resume');
+                  break;
+                case false:
+                  pauseCount();
+                  window.clearInterval(interval);
+                  console.log('pause');
+                  break;
+              }
+            }
+          })
         }
-      }
-    });   */
+      }); 
   }
 
+  function startCount() {
+    startTime = Date.now() - elapsedTime;
+    isPaused = false;
+    setInterval(function() {
+      if(!isPaused){
+        elapsedTime = Date.now() - startTime;
+        score = FPS*Math.floor(elapsedTime/1000);
+        document.getElementById('score').textContent = score;
+      }
+    }, 10);
+  }
+
+  function pauseCount(){
+    isPaused = true;
+    elapsedTime = Date.now() - startTime;
+    window.clearInterval(interval);
+  }
+
+  function resumeCount(){
+    isPaused = false;
+    startTime = Date.now() - elapsedTime;
+  }
+
+  function resetCount(){
+    startTime = null;
+    elapsedTime = 0;
+    isPaused = false;
+    score = 0;
+    document.getElementById('score').textContent = score;
+  }
+
+
+
+
   window.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") ship.mudaDirecao(-1);
-    else if (e.key === "ArrowRight") ship.mudaDirecao(+1);
+    if (e.key == "ArrowLeft") ship.mudaDirecao(-1);
+    else if (e.key == "ArrowRight") ship.mudaDirecao(+1);
   });
 
   class Space {
@@ -86,15 +143,44 @@
     }
   }
 
-  class Placar {
+  class AsteroidBig {
     constructor() {
-      this.element.style.position = `re`;
-      this.element.src = "assets/player.png";
-      this.element.style.top = `1px`;
-      this.element.style.left = `5px`;
+      this.element = document.createElement("img");
+      this.element.className = "asteroid-big";
+      this.element.src = "assets/meteorBig.png";
+      this.element.style.top = "0px";
+      this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
       space.element.appendChild(this.element);
     }
+    move() {
+      this.element.style.top = `${parseInt(this.element.style.top) + 2}px`;
+    }
   }
+
+  // class EnemyShip {
+  //   constructor() {
+  //     this.element = document.createElement("img");
+  //     this.element.className = "enemy-ship";
+  //     this.element.src = "assets/enemyShip.png";
+  //     this.element.style.top = "0px";
+  //     this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
+  //     space.element.appendChild(this.element);
+  //   }
+  //   move() {
+  //     this.element.style.top = `${parseInt(this.element.style.top) + 2}px`;
+  //   }
+  // }
+
+  // class Placar {
+  //   constructor() {
+  //     this.element.style.position = `re`;
+  //     this.element.src = "assets/player.png";
+  //     this.element.style.top = `1px`;
+  //     this.element.style.left = `5px`;
+  //     this.element.style.display = `flex`
+  //     space.element.appendChild(this.element);
+  //   }
+  // }
 
   function run() {
 
@@ -102,6 +188,12 @@
     if (random_enemy_ship <= PROB_ENEMY_SHIP) {
       enemies.push(new EnemyShip());
     }
+
+    const random_asteroid_big = Math.random() * 100;
+    if (random_asteroid_big <= PROB_ENEMY_SHIP) {
+      enemies.push(new AsteroidBig());
+    }
+
     enemies.forEach((e) => e.move());
     ship.move();
 
