@@ -10,7 +10,7 @@
   const dificuldade = 20;
   
 
-  let space, ship, placar, spaceCheck = 0;
+  let space, ship, placar, spaceCheck = -1;
   let enemies = [];
   let vidas = [];
   let stopped = true;
@@ -21,6 +21,7 @@
   let interval = 0;
   let contVidas = 4;
   let gameStarted = true;
+  let shots = [];
   
   const gameOverText = document.createElement('div');
   gameOverText.innerText = 'GAME OVER';
@@ -75,7 +76,7 @@
     }, 60 * 1000);
     
     document.addEventListener('keydown', e => {
-      if(e.code === 'Space' && spaceCheck === 0){
+      if(e.code === 'Space' && spaceCheck < 0){
         spaceCheck++;
         StartGameText.remove();
         startCount();
@@ -100,7 +101,20 @@
         }
       }); 
 
-      
+      document.addEventListener('keydown', e => {
+        if(e.code === 'Space' && spaceCheck >= 0){
+          spaceCheck++;
+          tiro = new Shot();
+          shots.push(tiro);
+        }
+      }); 
+
+      setInterval(() => {
+        shots.forEach(s => {
+          s.move();
+          s.checkCollision();
+        })
+      }, 1000/FPS);
 
       setInterval(() => {
         ship.checkCollision();
@@ -112,6 +126,23 @@
         }
       }, 1000/FPS);
       
+      // setInterval(() => {
+      //     for (let i = 0; i < shots.length; i++) {
+      //       const tiro = shots[i];
+      //       tiro.move();
+        
+      //       for (let j = 0; j < enemies.length; j++) {
+      //         const obstacle = enemies[j];
+      //         if (tiro.checkCollision()) {
+      //           tiro.element.remove();
+      //           shots.splice(i, 1);
+      //           obstacle.element.remove();
+      //           enemies.splice(j, 1);
+      //           break;
+      //         }
+      //       }
+      //     }
+      //   }, 1000/FPS);
   }
 
   function startCount() {
@@ -208,6 +239,17 @@
           enemy.element.remove();
           const index = enemies.indexOf(enemy);
           enemies.splice(index, 1);
+          enemy.element.classList.forEach(cls => {
+            if (cls.startsWith("enemy-ship")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("asteroid-big")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("asteroid-small")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("disco-voador")) {
+              enemy.element.classList.remove(cls);
+            }
+          });
           contVidas--;
           vidas[0].element.remove();
           vidas[0].element.classList.remove('vida'); 
@@ -215,7 +257,7 @@
         }
       });
     }
-  
+
     move() {
       if (this.direcao === 0)
         this.element.style.left = `${parseInt(this.element.style.left) - (3)}px`;
@@ -309,6 +351,73 @@
         enemies.splice(index, 1);
       } else {
         this.element.style.top = `${parseInt(this.element.style.top) + (this.element.speed)}px`;
+      }   
+    }
+  }
+
+  function isColliding(a, b) {
+    const aRect = a.getBoundingClientRect();
+    const bRect = b.getBoundingClientRect();
+    return !(
+      (aRect.bottom < bRect.top) ||
+      (aRect.top > bRect.bottom) ||
+      (aRect.right < bRect.left) ||
+      (aRect.left > bRect.right)
+    );
+  }
+
+  class Shot {
+    constructor() {
+      this.element = document.createElement("img");
+      this.element.className = "shot";
+      this.element.src = "assets/laserGreen.png";
+      this.element.style.top = `${1000}px`;
+      this.element.style.left = `${parseInt(ship.element.style.left) + (ship.element.clientWidth/2)}px`;
+      space.element.appendChild(this.element);
+    }
+    
+    checkCollision() {
+      enemies.forEach(enemy => {
+        const enemyRect = enemy.element.getBoundingClientRect();
+        const tiroRect = this.element.getBoundingClientRect();
+  
+        if (
+        enemyRect.bottom >= tiroRect.top &&
+        enemyRect.top <= tiroRect.bottom &&
+        enemyRect.right >= tiroRect.left &&
+        enemyRect.left <= tiroRect.right) {
+          enemy.element.remove();
+          const index = enemies.indexOf(enemy);
+          enemies.splice(index, 1);
+          this.element.remove();
+          this.element.classList.remove("shot");
+          const index2 = shots.indexOf(this);
+          shots.splice(index2, 1);
+          score = score + 200;
+
+          enemy.element.classList.forEach(cls => {
+            if (cls.startsWith("enemy-ship")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("asteroid-big")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("asteroid-small")) {
+              enemy.element.classList.remove(cls);
+            } else if (cls.startsWith("disco-voador")) {
+              enemy.element.classList.remove(cls);
+            }
+          });
+        }
+      });
+    }
+
+    move() {
+      if (this.element.style.top === `10px`) {
+        this.element.remove();
+        this.element.classList.remove('shot');
+        const index = shots.indexOf(this);
+        shots.splice(index, 1);
+      } else {
+        this.element.style.top = `${parseInt(this.element.style.top) - 5}px`;
       }   
     }
   }
