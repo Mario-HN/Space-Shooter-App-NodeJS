@@ -10,7 +10,23 @@
     position: absolute;
 }
 
+#damaged-ship {
+    position: absolute;
+}
+
 .enemy-ship {
+    position: absolute;
+}
+
+.asteroid-big {
+    position: absolute;
+}
+
+.asteroid-small {
+    position: absolute;
+}
+
+.disco-voador {
     position: absolute;
 }
 
@@ -24,8 +40,7 @@
   
   /* Estilo para cada subseção do time */
 .vida {
-    display: flex;
-    background-image: url('../assets/player.png'); 
+    position: absolute; 
 }
   
 .score {
