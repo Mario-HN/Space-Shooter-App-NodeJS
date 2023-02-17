@@ -1,3 +1,6 @@
+Todos os seletores foram identificados corretamente
+Nota: 2.0
+
 1. pelo elemento span:  span{}
 2. interseccao entre a classe e o elemento span:  span.cl1{}
 3. pelo título: [title='css']{}

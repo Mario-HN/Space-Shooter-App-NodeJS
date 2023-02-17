@@ -1,3 +1,6 @@
+Todos os erros foram encontrados corretamente.
+Nota 2.0
+
 1. O código está sem a estrutura do <body>
 2. O comentário em HTML está feito de forma errada. O correto é feito utilizando <-- conteudo --> 
 3. Na linha 18, <strong> está aberto. No entanto esta tag precisa ser fechada no conjunto de caracteres que será usada. Ex: <strong> Olá </strong>
