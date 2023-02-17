@@ -1,3 +1,6 @@
+Código não executa, apesar da lógica estar correta. Tem erros nos nomes dos métodos e das classes.
+Nota: 1.0
+
 class Venda {
     constructor(id,quantidade,preco){
         this.id = id;

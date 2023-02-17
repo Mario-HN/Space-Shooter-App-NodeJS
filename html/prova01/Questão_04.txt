@@ -1,3 +1,6 @@
+Conceito incompleto, pq não levou em consideração a questão do escopo. Esse tipo de erro não pode ocasionar erros. 
+Nota: 1.3
+
 Hoisting é quando uma função é executada antes de ser declarada. Em alguns casos o js é capaz de perceber este 'erro' e 
 compreender a mudança de ordens, no entanto, as vezes isso pode ocasionar erros. 
 
