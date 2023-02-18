@@ -129,6 +129,11 @@
       
   }
 
+  window.addEventListener("keydown", (e) => {
+    if (e.key == "ArrowLeft") ship.mudaDirecao(-1);
+    else if (e.key == "ArrowRight") ship.mudaDirecao(+1);
+  });
+
   function startCount() {
     startTime = Date.now() - elapsedTime;
     isPaused = false;
@@ -165,11 +170,6 @@
     location.reload();
   }
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key == "ArrowLeft") ship.mudaDirecao(-1);
-    else if (e.key == "ArrowRight") ship.mudaDirecao(+1);
-  });
-
   class Space {
     constructor() {
       this.element = document.getElementById("space");
@@ -187,8 +187,6 @@
     }
 
   }
-
-  
 
   class Ship {
     constructor() {
@@ -244,10 +242,18 @@
     }
 
     move() {
-      if (this.direcao === 0)
-        this.element.style.left = `${parseInt(this.element.style.left) - (3)}px`;
-      if (this.direcao === 2)
-        this.element.style.left = `${parseInt(this.element.style.left) + (3)}px`;
+      if (this.direcao === 0) {
+        const newLeft = parseInt(this.element.style.left) - 3;
+        if (newLeft >= 0) { 
+          this.element.style.left = `${newLeft}px`;
+        }
+      }
+      if (this.direcao === 2) {
+        const newLeft = parseInt(this.element.style.left) + 3;
+        if (newLeft <= (TAMX - this.element.offsetWidth)) { 
+          this.element.style.left = `${newLeft}px`;
+        }
+      }
       space.move();
     }
   }
@@ -340,17 +346,6 @@
     }
   }
 
-  function isColliding(a, b) {
-    const aRect = a.getBoundingClientRect();
-    const bRect = b.getBoundingClientRect();
-    return !(
-      (aRect.bottom < bRect.top) ||
-      (aRect.top > bRect.bottom) ||
-      (aRect.right < bRect.left) ||
-      (aRect.left > bRect.right)
-    );
-  }
-
   class Shot {
     constructor() {
       this.element = document.createElement("img");
@@ -425,11 +420,6 @@
 
   function run() {
     space.move();
-
-    // const shipTop = parseInt(ship.element.style.top);
-    // const shipLeft = parseInt(ship.element.style.left);
-    // const shipWidth = ship.element.clientWidth;
-    // const shipHeight = ship.element.clientHeight;
 
     const random_enemy_ship = Math.random() * 100;
     if (random_enemy_ship <= PROB_ENEMY_SHIP) {
