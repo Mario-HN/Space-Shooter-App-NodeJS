@@ -34,15 +34,12 @@
     position: absolute;
 }
 
-
-/* Estilo para o contêiner principal */
 .scoreboard {
     display: flex;
     justify-content: flex-end;
     padding: 2px;
 }
   
-  /* Estilo para cada subseção do time */
 .vida {
     position: absolute; 
 }
