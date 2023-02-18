@@ -11,6 +11,7 @@
   
 
   let space, ship, placar, spaceCheck = -1;
+  let totalScore = 0 , score2 = 0;
   let enemies = [];
   let vidas = [];
   let stopped = true;
@@ -126,23 +127,6 @@
         }
       }, 1000/FPS);
       
-      // setInterval(() => {
-      //     for (let i = 0; i < shots.length; i++) {
-      //       const tiro = shots[i];
-      //       tiro.move();
-        
-      //       for (let j = 0; j < enemies.length; j++) {
-      //         const obstacle = enemies[j];
-      //         if (tiro.checkCollision()) {
-      //           tiro.element.remove();
-      //           shots.splice(i, 1);
-      //           obstacle.element.remove();
-      //           enemies.splice(j, 1);
-      //           break;
-      //         }
-      //       }
-      //     }
-      //   }, 1000/FPS);
   }
 
   function startCount() {
@@ -152,7 +136,8 @@
       if(!isPaused){
         elapsedTime = Date.now() - startTime;
         score = FPS*Math.floor(elapsedTime/1000);
-        document.getElementById('score').textContent = score;
+        document.getElementById('score').textContent = totalScore;
+        totalScore = score + score2;
       }
     }, 10);
   }
@@ -393,18 +378,22 @@
           this.element.classList.remove("shot");
           const index2 = shots.indexOf(this);
           shots.splice(index2, 1);
-          score = score + 200;
+          totalScore = totalScore + 200;
 
           enemy.element.classList.forEach(cls => {
             if (cls.startsWith("enemy-ship")) {
               enemy.element.classList.remove(cls);
+              score2 = score2 + 50;
             } else if (cls.startsWith("asteroid-big")) {
               enemy.element.classList.remove(cls);
+              score2 = score2 + 10;
             } else if (cls.startsWith("asteroid-small")) {
               enemy.element.classList.remove(cls);
+              score2 = score2 + 100;
             } else if (cls.startsWith("disco-voador")) {
               enemy.element.classList.remove(cls);
-            }
+              score2 = score2 + 20;
+            } 
           });
         }
       });
