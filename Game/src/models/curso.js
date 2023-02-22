@@ -1,5 +1,7 @@
 'use strict';
-const { Model } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Curso extends Model {
     /**
@@ -13,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Curso.init({
     nome: {
-      allowNull: false,
       type: DataTypes.STRING,
+      allowNull: false
     },
     areaId: DataTypes.INTEGER
   }, {

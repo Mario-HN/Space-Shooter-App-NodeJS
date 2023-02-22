@@ -1,1 +1,22 @@
 <h1>Listagem de Recursos</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Sigla</th>
+      <th cope="col">Nome</th>
+      <th scope="col">Área</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cursos}}
+    <tr class="table-dark">
+      <td>{{sigla}}</td>
+      <td>{{nome}}</td>
+      <td>{{areaId}}</td>
+      <td></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+

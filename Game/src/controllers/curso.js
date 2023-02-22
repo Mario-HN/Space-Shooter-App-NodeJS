@@ -1,8 +1,11 @@
 const models = require("../models");
 const Curso = models.Curso;
 
-const index = (req, res) => {
-    res.render("curso/index");
+const index = async (req, res) => {
+    const cursos = await Curso.findAll();
+    res.render("curso/index", {
+        cursos: cursos.map((curso) => curso.toJSON()),
+    });
 };
 
 const create = async (req, res) => {
@@ -35,6 +38,6 @@ const remove = async (req, res) => {
 
 }
 
-export default { index, create, read, update, remove }
+module.exports = { index, create, read, update, remove };
 
 
