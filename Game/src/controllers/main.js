@@ -1,30 +1,15 @@
 const index = (req, res) => {
-    const username = "fernanda"
-    res.render("main/index", {
-        username: username,
-        isRyan: username==="ryan"
-    });
+    res.render("main/index");
 };
 
-const profs = (req, res) => {
-    const professores = [
-        {nome: "David Fernandes", sala: 1238},
-        {nome: "Horácio Fernandes", sala: 1333},
-        {nome: "Tayana COnte", sala: 1234},
-        {nome: "Leandro Galvão", sala: 1111}
-    ];
-    res.render("main/profs", {
-    professores,
-    })
-}
+const game = (req, res) => {
+    res.render("main/game");
+};
 
 const about =  (req, res) => {
-    res.send("Pagina about");
+    res.render("main/about");
 };
 
-const ui = (req, res) => {
-    res.render("main/ui");
-}
 
 
-export default { index, about, profs, ui }; 
+export default { index, about, game }; 

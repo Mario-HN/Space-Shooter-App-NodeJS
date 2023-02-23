@@ -82,14 +82,6 @@
   
     addSourceModals();
   
-    // Prevent empty `a` elements or `submit` buttons from navigating away
-    const targets = document.querySelectorAll('[href="#"], [type="submit"]');
-  
-    for (const element of targets) {
-      element.addEventListener('click', event => {
-        event.preventDefault();
-      });
-    }
   
     // Add the "View Source" buttons in each component
     const bsComponents = document.querySelectorAll('.bs-component');
@@ -112,4 +104,21 @@
     for (const tooltip of tooltipElements) {
       new bootstrap.Tooltip(tooltip); // eslint-disable-line no-new
     }
+
+    
+
   })();
+  
+  function apagarCurso(id){
+    $.ajax({
+      url: `/curso/${id}`,
+      type: 'DELETE',
+    })  
+    .done(function(msg){
+      console.log(msg);
+      window.location.href = '/curso';
+    })   
+    .fail(function(msg) {
+      console.log(msg);
+    }) 
+  }

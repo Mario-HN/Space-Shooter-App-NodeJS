@@ -17,4 +17,4 @@ const index = async (req, res) => {
 //         res.send("Criado!");
 //     }
 
-export default { index }
+export default { index };

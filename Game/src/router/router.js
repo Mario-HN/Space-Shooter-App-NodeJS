@@ -7,8 +7,7 @@ const router = express.Router();
 // Main controller
 router.get("/", mainController.index);
 router.get("/about", mainController.about);
-router.get("/profs", mainController.profs);
-router.get("/ui", mainController.ui);
+router.get("/game", mainController.game);
 
 // Area Controller
 router.get("/areas", areaController.index);
@@ -25,7 +24,7 @@ router.get("/curso/:id", cursoController.read);
 router.get("/curso/update/:id", cursoController.update);
 router.post("/curso/update/:id", cursoController.update);
 
-router.get("/curso/remove/:id", cursoController.remove);
+router.delete("/curso/:id", cursoController.remove);
 
 
 

@@ -4,27 +4,28 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "npx nodemon -r esm index.js"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx nodemon -r esm index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "@fortawesome/fontawesome-free": "^6.3.0",
-      "@popperjs/core": "^2.11.6",
-      "bootstrap": "^5.2.3",
-      "esm": "^3.2.25",
-      "express-handlebars": "^6.0.7",
-      "is-odd": "^3.0.1",
-      "morgan": "^1.10.0",
-      "mysql2": "^3.1.2",
-      "node-sass-middleware": "^1.0.1",
-      "sass": "^1.58.0",
-      "sequelize": "^6.28.0",
-      "sequelize-cli": "^6.6.0"
+        "@fortawesome/fontawesome-free": "^6.3.0",
+        "@popperjs/core": "^2.11.6",
+        "bootstrap": "^5.2.3",
+        "esm": "^3.2.25",
+        "express": "^4.18.2",
+        "express-handlebars": "^6.0.7",
+        "is-odd": "^3.0.1",
+        "morgan": "^1.10.0",
+        "mysql2": "^3.1.2",
+        "node-sass-middleware": "^1.0.1",
+        "sass": "^1.58.0",
+        "sequelize": "^6.28.0",
+        "sequelize-cli": "^6.6.0"
     },
     "devDependencies": {
-      "nodemon": "^2.0.20"
+        "nodemon": "^2.0.20"
     }
-  }
+}
