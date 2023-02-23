@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h1>Criação de Conta</h1>
+    <form action="/signUp" method="post">
+    {{!-- <input type="hidden" name="_csrf" value="{{csrf}}"> --}}
+        <fieldset>
+            <div class="form-group">
+                <label for="nome" class="form-label mt-4">Nome Completo</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                id="nome" 
+                nome="nome"
+                placeholder="Roberto da Silva">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label mt-4">E-mail</label>
+                <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                nome="email"
+                placeholder="roberto.silva@gmail.com">
+            </div>
+            <div class="form-group">
+                    <label for="cursoId" class="form-label mt-4">Informe seu Curso</label>
+                    <select class="form-select" id="cursoId" name="cursoId">
+                      <option value="0">Selecione seu curso:</option>
+                      {{#each cursos}}
+                        <option value="{{id}}">{{nome}}</option>
+                      {{/each}}
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="senha" class="form-label mt-4">Senha</label>
+                <input 
+                type="password" 
+                class="form-control" 
+                id="senha" 
+                nome="senha"
+                placeholder="Digita sua Senha.">
+                {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small> --}}
+            </div>
+            <div class="form-group">
+                <label for="csenha" class="form-label mt-4">Confirme sua senha</label>
+                <input 
+                type="password" 
+                class="form-control" 
+                id="csenha" 
+                nome="csenha"
+                placeholder="Digite sua senha novamente para confirmar.">
+                {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small> --}}
+            </div>
+            <div class="d-grid gap-2 mt-4">
+                <button class="btn btn-lg btn-primary" type="submit">Criar Conta</button>
+            </div>
+        </fieldset>
+    </form>
+
+        </div>
+    </div>
+</div>
