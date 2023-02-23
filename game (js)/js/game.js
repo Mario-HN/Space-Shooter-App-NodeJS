@@ -1,12 +1,12 @@
 (function () {
-  const TAMX = 1720;
-  const TAMY = 1080;
-  const FPS = 100;
+  const TAMX = 1250;
+  const TAMY = 800;
+  const FPS = 144;
 
-  const PROB_ENEMY_SHIP = 2;
-  const PROB_ASTEROID_BIG = 0.75;
-  const PROB_ASTEROID_SMALL = 1;
-  const PROB_DISCO_VOADOR = 0.5;
+  const PROB_ENEMY_SHIP = 1;
+  const PROB_ASTEROID_BIG = 0.32;
+  const PROB_ASTEROID_SMALL = 0.5;
+  const PROB_DISCO_VOADOR = 0.25;
   const dificuldade = 20;
   
 
@@ -129,10 +129,7 @@
       
   }
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key == "ArrowLeft") ship.mudaDirecao(-1);
-    else if (e.key == "ArrowRight") ship.mudaDirecao(+1);
-  });
+  
 
   function startCount() {
     startTime = Date.now() - elapsedTime;
@@ -201,6 +198,31 @@
       this.element.src = this.AssetsDirecoes[this.direcao];
       this.element.style.bottom = "20px";
       this.element.style.left = `${parseInt(TAMX / 2) - 50}px`;
+
+      this.isMovingLeft = false;
+      this.isMovingRight = false;
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "ArrowLeft") {
+          this.isMovingLeft = true;
+          this.mudaDirecao(-1);
+          this.element.src = this.AssetsDirecoes[0];
+        } else if (e.key == "ArrowRight") {
+          this.isMovingRight = true;
+          this.mudaDirecao(+1);
+          this.element.src = this.AssetsDirecoes[2];
+        }
+      });
+    
+      window.addEventListener("keyup", (e) => {
+        if (e.key == "ArrowLeft") {
+          this.isMovingLeft = false;
+          this.element.src = this.AssetsDirecoes[1];
+        } else if (e.key == "ArrowRight") {
+          this.isMovingRight = false;
+          this.element.src = this.AssetsDirecoes[1];
+        }
+      });
       
     }
     mudaDirecao(giro) {
@@ -242,15 +264,15 @@
     }
 
     move() {
-      if (this.direcao === 0) {
+      if (this.isMovingLeft) {
         const newLeft = parseInt(this.element.style.left) - 3;
-        if (newLeft >= 0) { 
+        if (newLeft >= 0) {
           this.element.style.left = `${newLeft}px`;
         }
       }
-      if (this.direcao === 2) {
+      if (this.isMovingRight) {
         const newLeft = parseInt(this.element.style.left) + 3;
-        if (newLeft <= (TAMX - this.element.offsetWidth)) { 
+        if (newLeft <= (TAMX - this.element.offsetWidth)) {
           this.element.style.left = `${newLeft}px`;
         }
       }
@@ -351,7 +373,7 @@
       this.element = document.createElement("img");
       this.element.className = "shot";
       this.element.src = "assets/laserGreen.png";
-      this.element.style.top = `${1000}px`;
+      this.element.style.top = `${700}px`;
       this.element.style.left = `${parseInt(ship.element.style.left) + (ship.element.clientWidth/2)}px`;
       space.element.appendChild(this.element);
     }
