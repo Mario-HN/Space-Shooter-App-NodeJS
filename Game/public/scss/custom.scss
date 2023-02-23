@@ -277,6 +277,69 @@ iframe {
     }
 }
 
+.card-cursos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+#space {
+    border: 1px solid white;
+    background-image: url("../assets/Background/starBackground.png");
+    position: relative;
+    overflow: hidden;
+
+}
+
+#ship {
+    position: absolute;
+}
+
+#damaged-ship {
+    position: absolute;
+}
+
+.shot {
+    position: absolute;                                        ;
+}
+
+.enemy-ship {
+    position: absolute;
+}
+
+.asteroid-big {
+    position: absolute;
+}
+
+.asteroid-small {
+    position: absolute;
+}
+
+.disco-voador {
+    position: absolute;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2px;
+}
+  
+.vida {
+    position: absolute; 
+}
+  
+.score {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(254, 254, 254);
+}
+
 .bs-component>.btn,
 .bs-component>.btn-toolbar>.btn-group,
 .bs-component>.btn-group,

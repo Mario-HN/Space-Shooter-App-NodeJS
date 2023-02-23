@@ -24,7 +24,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      sigla: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      descricao: {
+        type: Sequelize.TEXT
+      },
     });
   },
   async down(queryInterface, Sequelize) {

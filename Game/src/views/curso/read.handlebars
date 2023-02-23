@@ -1,0 +1,32 @@
+<div class="card text-white bg-primary mb-3" >
+  <div class="card-header card-cursos">
+    <div>{{curso.nome}}</div>
+    <div><a href="http://" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></a></div>
+    </div>
+  <div class="card-body">
+    <p class="card-text">Área: {{curso.Area.nome}}</p>
+    <p class="card-text">Sigla: {{curso.sigla}}</p>
+    <p class="card-text">Descrição: {{curso.descricao}}</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Aviso!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Você tem certeza? Essa ação não pode ser desfeita!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="/curso"><button type="button mt-2" class="btn btn-primary">Voltar</button> </a>

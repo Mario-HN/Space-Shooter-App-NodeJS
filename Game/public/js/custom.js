@@ -82,14 +82,6 @@
   
     addSourceModals();
   
-    // Prevent empty `a` elements or `submit` buttons from navigating away
-    const targets = document.querySelectorAll('[href="#"], [type="submit"]');
-  
-    for (const element of targets) {
-      element.addEventListener('click', event => {
-        event.preventDefault();
-      });
-    }
   
     // Add the "View Source" buttons in each component
     const bsComponents = document.querySelectorAll('.bs-component');

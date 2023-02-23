@@ -3,7 +3,8 @@
   <thead>
     <tr>
       <th scope="col">Sigla</th>
-      <th cope="col">Nome</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
       <th scope="col">Área</th>
       <th scope="col">Opções</th>
     </tr>
@@ -13,10 +14,13 @@
     <tr class="table-dark">
       <td>{{sigla}}</td>
       <td>{{nome}}</td>
+      <td>{{descricao}}</td>
       <td>{{areaId}}</td>
-      <td></td>
+      <td><a href="/curso/{{id}}"><i class="fa-sharp fa-solid fa-eye"></i></a> <a href="#"><i class="fa-solid fa-trash"></i></a></td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+
+<a href="/curso/create"><button type="button mt-2" class="btn btn-primary">Criar novo curso</button> </a>
 
