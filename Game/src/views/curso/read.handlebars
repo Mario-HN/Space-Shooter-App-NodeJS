@@ -1,7 +1,7 @@
 <div class="card text-white bg-primary mb-3" >
   <div class="card-header card-cursos">
     <div>{{curso.nome}}</div>
-    <div><a href="http://" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></a></div>
+    <div><a href="http://" data-bs-toggle="modal" data-bs-target="#modal-delecao"><i class="fa-solid fa-trash"></i></a></div>
     </div>
   <div class="card-body">
     <p class="card-text">Área: {{curso.Area.nome}}</p>
@@ -11,7 +11,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-delecao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -23,10 +23,18 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+        <button id="botao-delecao" type="button" class="btn btn-primary">Sim</button>
       </div>
     </div>
   </div>
 </div>
 
 <a href="/curso"><button type="button mt-2" class="btn btn-primary">Voltar</button> </a>
+
+
+<script>
+  const botaoDelecao = document.getElementById("botao-delecao");
+  botaoDelecao.onclick = function() {
+    apagarCurso({{curso.id}});
+  }
+</script>

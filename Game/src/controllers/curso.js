@@ -44,7 +44,14 @@ const update = async (req, res) => {
 
 
 const remove = async (req, res) => {
-
+    const { id } = req.params;
+    try {
+        await Curso.destroy({where: {id: id}});
+        res.send("Curso apagado com sucesso");
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
 }
 
 module.exports = { index, create, read, update, remove };
