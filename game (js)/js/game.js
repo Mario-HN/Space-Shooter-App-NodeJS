@@ -1,7 +1,7 @@
 (function () {
   const TAMX = 1250;
   const TAMY = 800;
-  const FPS = 144;
+  const FPS = 100;
 
   const PROB_ENEMY_SHIP = 1;
   const PROB_ASTEROID_BIG = 0.32;
