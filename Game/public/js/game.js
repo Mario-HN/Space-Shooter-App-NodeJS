@@ -1,6 +1,6 @@
 (function () {
-    const TAMX = 1320;
-    const TAMY = 980;
+    const TAMX = 1250;
+    const TAMY = 800;
     const FPS = 100;
   
     const PROB_ENEMY_SHIP = 2;
