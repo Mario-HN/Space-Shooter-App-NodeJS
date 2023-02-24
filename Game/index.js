@@ -37,6 +37,7 @@ app.use("/js", [
    express.static(`${__dirname}/node_modules/@popperjs/core/dist/umd/`), 
 
 ]);
+app.use("/assets", express.static(`${__dirname}/public/assets`));
 
 
 app.use(cookieParser());

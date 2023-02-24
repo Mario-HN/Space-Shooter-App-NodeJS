@@ -29,18 +29,18 @@
   gameOverText.style.color = 'red';
   gameOverText.style.fontSize = '50px';
   gameOverText.style.position = 'absolute';
-  gameOverText.style.top = `${parseInt(TAMY / 2)+200}px`;
-  gameOverText.style.left = `${parseInt(TAMX / 2)}px`;
+  gameOverText.style.top = `${parseInt(TAMY)-300}px`;
+  gameOverText.style.left = `${parseInt(TAMX)-335}px`;
   gameOverText.style.transform = 'translate(-50%, -50%)';
   gameOverText.style.border = 'solid 5px black';
 
   const StartGameText = document.createElement('div');
-  StartGameText.innerText = 'Press Space Bar To Begin!';
+  StartGameText.innerText = 'Press Space to Start!';
   StartGameText.style.color = 'red';
   StartGameText.style.fontSize = '30px';
   StartGameText.style.position = 'absolute';
-  StartGameText.style.top = `${parseInt(TAMY/2)}px`;
-  StartGameText.style.left = `${parseInt(TAMX/2)}px`;
+  StartGameText.style.top = `${parseInt(TAMY)-200}px`;
+  StartGameText.style.left = `${parseInt(TAMX)-335}px`;
   StartGameText.style.transform = 'translate(-50%, -50%)';
   StartGameText.style.border = 'solid 5px black';
   
@@ -51,8 +51,8 @@
   restartButton.style.position = 'absolute';
   restartButton.style.backgroundColor = 'black';
   restartButton.style.color = 'red';
-  restartButton.style.top = `${parseInt(TAMY / 2) + 150}px`;
-  restartButton.style.left = `${parseInt(TAMX / 2) - 100}px`;
+  restartButton.style.top = `${parseInt(TAMY / 2)}px`;
+  restartButton.style.left = `${parseInt(TAMX / 2) - 90}px`;
   restartButton.addEventListener("click", restartGame);
 
   function init() {
@@ -126,6 +126,8 @@
           document.getElementById('restart-button').style.display = 'block';
         }
       }, 1000/FPS);
+
+      window.addEventListener('keydown', function(e) {   if(e.keyCode == 32 && e.target == document.body) {     e.preventDefault();   } });
       
   }
 
@@ -189,10 +191,10 @@
     constructor() {
       this.element = document.getElementById("ship");
       this.AssetsDirecoes = [
-        "assets/playerLeft.png",
-        "assets/player.png",
-        "assets/playerRight.png",
-        "assets/playerDamaged.png"
+        "../assets/playerLeft.png",
+        "../assets/player.png",
+        "../assets/playerRight.png",
+        "../assets/playerDamaged.png"
       ];
       this.direcao = 1;
       this.element.src = this.AssetsDirecoes[this.direcao];
@@ -284,7 +286,7 @@
     constructor() {
       this.element = document.createElement("img");
       this.element.className = "enemy-ship";
-      this.element.src = "assets/enemyShip.png";
+      this.element.src = "../assets/enemyShip.png";
       this.element.style.top = "0px";
       this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
       this.element.speed = Math.ceil((Math.random()*100)/dificuldade);
@@ -306,7 +308,7 @@
     constructor() {
       this.element = document.createElement("img");
       this.element.className = "asteroid-big";
-      this.element.src = "assets/meteorBig.png";
+      this.element.src = "../assets/meteorBig.png";
       this.element.style.top = "0px";
       this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
       this.element.speed = Math.ceil((Math.random()*100)/dificuldade);
@@ -328,7 +330,7 @@
     constructor() {
       this.element = document.createElement("img");
       this.element.className = "asteroid-small";
-      this.element.src = "assets/meteorSmall.png";
+      this.element.src = "../assets/meteorSmall.png";
       this.element.style.top = "0px";
       this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
       this.element.speed = Math.ceil((Math.random()*100)/dificuldade);
@@ -350,7 +352,7 @@
     constructor() {
       this.element = document.createElement("img");
       this.element.className = "disco-voador";
-      this.element.src = "assets/enemyUFO.png";
+      this.element.src = "../assets/enemyUFO.png";
       this.element.style.top = "0px";
       this.element.style.left = `${Math.floor(Math.random() * TAMX)}px`;
       this.element.speed = Math.ceil((Math.random()*100)/dificuldade);
@@ -372,7 +374,7 @@
     constructor() {
       this.element = document.createElement("img");
       this.element.className = "shot";
-      this.element.src = "assets/laserGreen.png";
+      this.element.src = "../assets/laserGreen.png";
       this.element.style.top = `${700}px`;
       this.element.style.left = `${parseInt(ship.element.style.left) + (ship.element.clientWidth/2)}px`;
       space.element.appendChild(this.element);
@@ -432,7 +434,7 @@
     constructor() {
       this.element =  document.createElement("img");
       this.element.className = "vida"
-      this.element.src = "assets/player.png";
+      this.element.src = "../assets/player.png";
       this.element.style.top = `1px`;
       this.element.style.left = `${TAMX-300}px`;
       this.element.style.width = `50px`;
