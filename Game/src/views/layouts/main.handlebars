@@ -32,12 +32,26 @@
                         <a class="nav-link" href="/game">Jogar!</a>
                     </li>
                 </ul>
+                {{#if isLogged}}
                 <ul class="navbar-nav ms-md-auto">
                     <li class="nav-item">
                         <a target="_blank" rel="noopener" class="nav-link"
-                            href="#"><i class="bi bi-github fa-solid fa-user"></i>Login</a>
+                            href="/logout"><i class="bi bi-github fa-solid fa-right-to-bracket"></i>Logout</a>
                     </li>
                 </ul>
+
+                {{else}}
+                <ul class="navbar-nav ms-md-auto">
+                    <li class="nav-item">
+                        <a target="_blank" rel="noopener" class="nav-link"
+                            href="/signUp"><i class="bi bi-github fa-solid fa-right-to-bracket"></i>Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a target="_blank" rel="noopener" class="nav-link"
+                            href="/login"><i class="bi bi-github fa-solid fa-user"></i>Login</a>
+                    </li>
+                </ul>
+                {{/if}}
             </div>
         </div>
     </div>

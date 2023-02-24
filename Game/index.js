@@ -6,11 +6,13 @@ import cookieParser from "cookie-parser";
 import csurf from "csurf";
 import { v4 as uuidv4 } from "uuid";
 import session from "express-session";
+import dotenv from "dotenv";
 
 
 const morgan = require("morgan"); 
 const app = express();
-const PORT = 4400;
+dotenv.config();
+
 
 app.engine('handlebars', engine({
     helpers: require(`${__dirname}/src/views/helpers/helpers`),
@@ -75,11 +77,15 @@ app.use(session({
 //     }
 // })
 
+app.use((req, res, next) => {
+    app.locals.isLogged = 'uid' in req.session;
+    next();
+})
 
 app.use(express.urlencoded({extended: false}));
 app.use(morgan("combined"));
 app.use(router);
 
-app.listen(PORT, () => {
-    console.log(`Escutando na porta ${PORT}!`);
+app.listen(process.env.PORT, () => {
+    console.log(`Escutando na porta ${process.env.PORT}!`);
 });
