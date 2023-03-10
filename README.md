@@ -26,7 +26,7 @@
 4. Criar as migrations com o seguinte comando: <br> ```npx sequelize db:migrate``` <br>
 5. Criar os Seeders com o seguinte comando: <br> ```npx sequelize db:seed:all``` <br>
 6. Rodar a aplicação com o comando ```npm start```<br>
-7. entrar no link http://localhost:3000/ , para alterar a PORT, mudar na variável localizada no arquivo ".env"
+7. entrar no link http://localhost:3000/ , caso precise alterar a PORT, a variável pode ser localizada no arquivo ".env"
   
 # Jogo
 
