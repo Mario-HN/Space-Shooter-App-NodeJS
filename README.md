@@ -25,6 +25,7 @@
 3. Checar o arquivo Game/src/config/database.json se o nome do user, a senha e o database estão de acordo com o seu sistema. <br>
 4. Criar as migrations com o seguinte comando: <br> ```npx sequelize db:migrate``` <br>
 5. Criar os Seeders com o seguinte comando: <br> ```npx sequelize db:seed:all``` <br>
+6. Rodar a aplicação com o comando ```npm start```<br>
 
 # Jogo
 
