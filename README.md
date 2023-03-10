@@ -32,42 +32,7 @@ d <br>
 d <br>
 d <br>
 
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
-d
 
-dd
-
-d
-d
-d
-d
-d
-d
-d
-d
-d
-
-<a href="#App"> App </a>
+<h2> App <h2>
 
 #Jogo
