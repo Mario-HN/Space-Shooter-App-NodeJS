@@ -1,5 +1,0 @@
-9) Cite 3 vantagens de se desenvolver códigos em estilizando SASS ao invés de CSS.
-
-1. Um código CSS pode ser realizado em bem menos linhas utilizando SASS.
-2. É mais estável, permite funcionalidades extras  que o CSS padrão não permite, que facilitam o uso pelo programador.
-3. É compatível com todas as versões do CSS.

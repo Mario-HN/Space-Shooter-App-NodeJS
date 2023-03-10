@@ -1,8 +1,0 @@
-5) Uma das característias do framework Express é que ele é minimalista. Explique o
-significado dessa característica e quais as suas vantagens.
-
-Um framework minimalista significa que ele fornece apenas as funcionalidades básicas 
-necessárias para criar aplicativos web, sem muitos recursos extras ou configurações 
-complexas. Em resumo, a característica de ser minimalista do Express permite que os 
-desenvolvedores criem aplicativos web flexíveis, fáceis de aprender e personalizar, 
-e de baixo tamanho de código, sem ser forçados a usar recursos desnecessários ou inapropriados.

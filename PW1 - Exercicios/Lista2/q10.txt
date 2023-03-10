@@ -1,9 +1,0 @@
-10) Quais são as diferenças entre Views, Layouts e Helpers na engine de views HandleBars?
-
-Layouts são os arquivos que definem o padrão de todas as interfaces de usuários, lá colocamos
-o conteudo HTML q irá se repetir em todas as paǵinas.
-
-Views são as paginas específicas da aplicação, nelas iremos preencher as peculiaridades de cada
-página do nosso sistema.
-
-Helpers já servem para aplicar funcionalidades que estão fora do HandleBars

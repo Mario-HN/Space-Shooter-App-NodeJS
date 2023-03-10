@@ -1,7 +1,0 @@
-O "callback hell" é uma situação comum em que o código JavaScript se torna complexo e difícil 
-de ler e manter devido a uma grande quantidade de chamadas de retorno (callbacks) aninhadas. 
-Isso geralmente acontece quando as funções assíncronas são usadas para realizar várias tarefas 
-consecutivas, como ler arquivos, fazer requisições à rede ou consultar um banco de dados. Cada 
-uma dessas tarefas pode ser implementada como uma função de retorno, que é passada como um argumento 
-para outra função. Quando há muitas dessas funções aninhadas, o código se torna profundo e complicado, 
-e pode ser difícil de entender e manter.
