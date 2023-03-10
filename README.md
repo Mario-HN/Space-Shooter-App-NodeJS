@@ -12,6 +12,6 @@
 * [Web App](#App)
 * [Jogo JS](#Jogo)
 
-#App
+<p style="App"> App </p>
 
 #Jogo
