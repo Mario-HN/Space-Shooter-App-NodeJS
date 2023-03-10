@@ -12,27 +12,11 @@
 * <a href="#App"> [Web App] </a>
 * <a href="#Jogo"> [Jogo] </a>
 
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>d <br>
-d <br>
-d <br>
-d <br>d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-d <br>
-
-
 # App 
+
+O App está na pasta "Game" como todo o código atual do projeto, para conseguir rodar siga os seguintes passos:
+
+1. Utilize o comando git clone neste repositório para sua máquina. <br> ```git clone https://github.com/Mario-HN/Space-Shooter-App-NodeJS```<br>
+2. Na pasta clonada, utilize o comando npm install para instalar os pacotes necessários para rodar a aplicação. <br> ```npm install```<br>
 
 # Jogo
