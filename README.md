@@ -26,7 +26,8 @@
 4. Criar as migrations com o seguinte comando: <br> ```npx sequelize db:migrate``` <br>
 5. Criar os Seeders com o seguinte comando: <br> ```npx sequelize db:seed:all``` <br>
 6. Rodar a aplicação com o comando ```npm start```<br>
-
+7. entrar no link http://localhost:3000/ , para alterar a PORT, mudar na variável localizada no arquivo ".env"
+  
 # Jogo
 
 <p>A pasta "Space Shooter Game" contém o código do jogo Space Shooter, para rodar, basta seguir estes passos:<p>
