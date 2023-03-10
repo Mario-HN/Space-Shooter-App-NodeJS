@@ -18,7 +18,7 @@
 
 <p>O App está na pasta "Game" como todo o código atual do projeto, para conseguir rodar siga os seguintes passos:<p>
 
-<p>Obs: A pasta Space Shooter Game não é necessária para rodar o App, e todos os passos abaixo devem ser executados dentro da pasta Game.<p>
+<p>Obs: A pasta "Space Shooter Game" não é necessária para rodar o App(Game), e todos os passos abaixo devem ser executados dentro da pasta Game.<p>
 
 1. Utilize o comando git clone neste repositório para sua máquina. <br> ```git clone https://github.com/Mario-HN/Space-Shooter-App-NodeJS```<br>
 2. Na pasta clonada, utilize o comando npm install para instalar os pacotes necessários para rodar a aplicação. <br> ```npm install```<br>
@@ -30,7 +30,7 @@
 
 <p>A pasta "Space Shooter Game" contém o código do jogo Space Shooter, para rodar, basta seguir estes passos:<p>
   
-<p>Obs: A pasta "Game" não é necessária para rodar o Space Shooter Game.<p>
+<p>Obs: A pasta do App(Game) não é necessária para rodar o "Space Shooter Game".<p>
 
 1. Utilize o comando git clone neste repositório para sua máquina. <br> ```git clone https://github.com/Mario-HN/Space-Shooter-App-NodeJS```<br>
 2. execute o arquivo index.html
