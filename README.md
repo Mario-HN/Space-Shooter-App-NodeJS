@@ -10,7 +10,7 @@
 # Índice 
 
 * <a href="#App"> [Web App] </a>
-* [Jogo JS](#Jogo)
+* <a href="#Jogo"> [Jogo] </a>
 
 d <br>
 d <br>
@@ -33,6 +33,6 @@ d <br>
 d <br>
 
 
-<h2> App <h2>
+# App 
 
-#Jogo
+# Jogo
